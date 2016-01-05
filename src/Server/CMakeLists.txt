@@ -65,7 +65,6 @@ add_executable			(server		${SRCS}
 
 #		Link libraries with the server
 IF				(WIN32)
-
 	target_link_libraries	(server		Ws2_32)
 	target_link_libraries	(server		optimized	${SFML}sfml-system-s
 						debug		${SFML}sfml-system-s-d
@@ -75,8 +74,20 @@ ELSEIF				(UNIX)
 
 	target_link_libraries	(server		${COMMON_LIB}
 						dl)
-	find_package		(SFML REQUIRED)
-	target_link_libraries	(server		sfml-system)
+
+	include_directories(include /usr/local/include/) 
+
+	find_library(SFML_LIB SFML)
+	if (SFML_LIB)
+		MESSAGE(STATUS "SFML LIB FOUND!!!!: " ${SFML_LIB})
+	endif()
+	target_link_libraries(server ${SFML_LIB})
+
+	find_library(SFML_SYSTEM_LIB sfml-system)
+	if (SFML_SYSTEM_LIB)
+		MESSAGE(STATUS "SFML SYSTEM LIB FOUND!!!!: " ${SFML_SYSTEM_LIB})
+	endif()
+	target_link_libraries(server ${SFML_SYSTEM_LIB})
 
 ENDIF()
 

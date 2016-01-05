@@ -116,7 +116,7 @@ namespace App
 
 	void					HUDManager::setPlayerDisconnection(const Network::Packet &data)
 	{
-		const unsigned int	player = data.getData<const unsigned int>();
+		const size_t player = data.getData<const size_t>();
 
 		if (player < this->playerScoreMap_.size())
 			this->playerScoreMap_[player].SetText("Offline");

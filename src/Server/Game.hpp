@@ -6,6 +6,13 @@
 #include			<utility>
 #include			<SFML/System.hpp>
 
+//MacOS
+#include <sys/socket.h>
+#include <net/route.h>
+#include <net/if.h>
+#include <sys/types.h>
+#include <netinet/in.h>
+
 #include			"Level.hpp"
 #include			"Thread.hpp"
 #include			"AGameObject.hpp"

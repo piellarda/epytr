@@ -1,10 +1,18 @@
 #include    <iostream>
 #include    <vector>
+
 #ifdef _i386
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #endif
+
+//MacOS
+#include <sys/socket.h>
+#include <net/route.h>
+#include <net/if.h>
+#include <sys/types.h>
+#include <netinet/in.h>
 
 #include    "Protocol.hpp"
 #include    "Core.hpp"

@@ -1,6 +1,13 @@
 #ifndef GAMEHANDLER_HPP
 #define GAMEHANDLER_HPP
 
+//MacOS
+#include <sys/socket.h>
+#include <net/route.h>
+#include <net/if.h>
+#include <sys/types.h>
+#include <netinet/in.h>
+
 #include <string>
 #include <map>
 #include "CoreRTYPE.hpp"

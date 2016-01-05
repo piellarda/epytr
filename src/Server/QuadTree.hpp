@@ -40,6 +40,12 @@ private:
   QuadTree(QuadTree const &);
   QuadTree &			operator=(QuadTree const &);
 
+    // const sPoint    MaxNode[2] = {{static_cast<int>(this->x_), static_cast<int>(this->y_)}, // cornerUpLeft
+    //             {static_cast<int>(this->x_ + this->width_), static_cast<int>(this->y_ + this->height_)}}; // cornerDownRight
+    // const sPoint    MaxObj[2] = {{static_cast<int>(obj.getPosX()), static_cast<int>(obj.getPosY())}, // cornerUpLeft
+    //            {static_cast<int>(obj.getPosX() + obj.getWidth()), static_cast<int>(obj.getPosY() + obj.getHeight())}}; // cornerDownRight
+
+
 private:
   bool				isInThisNode(T const & obj) const
   {

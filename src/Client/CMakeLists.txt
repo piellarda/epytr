@@ -109,11 +109,37 @@ IF				(WIN32)
 
 ELSEIF				(UNIX)
 
-	find_package		(SFML REQUIRED)
-	target_link_libraries	(client		sfml-system
-						sfml-window
-						sfml-graphics
-						sfml-audio
+	include_directories(include /usr/local/include/) 
+
+	# sfml-system
+	find_library(SFML_SYSTEM_LIB sfml-system)
+	if (SFML_SYSTEM_LIB)
+		MESSAGE(STATUS "SFML SYSTEM LIB FOUND!!!!: " ${SFML_SYSTEM_LIB})
+	endif()
+	target_link_libraries(client ${SFML_SYSTEM_LIB})
+
+	# sfml-window
+	find_library(SFML_WINDOW_LIB sfml-window)
+	if (SFML_WINDOW_LIB)
+		MESSAGE(STATUS "SFML WINDOW LIB FOUND!!!!: " ${SFML_WINDOW_LIB})
+	endif()
+	target_link_libraries(client ${SFML_WINDOW_LIB})
+
+	# sfml-graphics
+	find_library(SFML_GRAPHICS_LIB sfml-graphics)
+	if (SFML_GRAPHICS_LIB)
+		MESSAGE(STATUS "SFML GRAPHICS LIB FOUND!!!!: " ${SFML_GRAPHICS_LIB})
+	endif()
+	target_link_libraries(client ${SFML_GRAPHICS_LIB})
+
+	# sfml-audio
+	find_library(SFML_AUDIO_LIB sfml-audio)
+	if (SFML_AUDIO_LIB)
+		MESSAGE(STATUS "SFML AUDIO LIB FOUND!!!!: " ${SFML_AUDIO_LIB})
+	endif()
+	target_link_libraries(client ${SFML_AUDIO_LIB})
+	
+	target_link_libraries	(client		
 						dl
 						${COMMON_LIB})
 

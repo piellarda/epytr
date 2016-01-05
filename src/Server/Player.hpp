@@ -2,6 +2,14 @@
 #define PLAYER_HPP
 
 #include <queue>
+
+//MacOS
+#include <sys/socket.h>
+#include <net/route.h>
+#include <net/if.h>
+#include <sys/types.h>
+#include <netinet/in.h>
+
 #include "Packet.hpp"
 #include "TCPSocket.hpp"
 

@@ -1,4 +1,12 @@
 #include <iostream>
+
+//MacOS
+#include <sys/socket.h>
+#include <net/route.h>
+#include <net/if.h>
+#include <sys/types.h>
+#include <netinet/in.h>
+
 #include "UDPSocket.hpp"
 #include "Game.hpp"
 #include "GameHandler.hpp"

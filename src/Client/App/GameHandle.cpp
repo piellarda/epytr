@@ -1,3 +1,6 @@
+//MacOS
+#include <arpa/inet.h>
+
 #include "GameHandle.hpp"
 #include "GameClient.hpp"
 #include "StateManager.hpp"
